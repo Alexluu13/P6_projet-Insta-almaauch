@@ -24,6 +24,12 @@ return new class extends Migration
         });
     }
 
+    public function posts()
+    {
+    return $this->hasMany(Post::class);
+    }
+
+
     /**
      * Reverse the migrations.
      *
