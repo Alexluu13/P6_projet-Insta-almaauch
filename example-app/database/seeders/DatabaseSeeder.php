@@ -20,5 +20,8 @@ class DatabaseSeeder extends Seeder
 
         \App\Models\Post::factory(9)->create();
         $this->call(PostSeeder::class);   
+
+        \App\Models\Category::factory(5)->create();
+        $this->call(PostSeeder::class);   
     }
 }

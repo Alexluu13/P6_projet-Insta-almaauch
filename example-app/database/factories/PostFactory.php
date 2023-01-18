@@ -18,7 +18,7 @@ class PostFactory extends Factory
     {
         return [
             'description' => $this->faker->sentence,
-            'img_url' => $this->faker->imageUrl(640, 480, 'Lego'),
+            'img_url' => $this->faker->imageUrl(640, 480, 'Lego Fun'),
             'user_id' => $this->faker->randomDigitNotNull()
         ];
     }
