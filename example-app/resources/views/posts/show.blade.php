@@ -25,7 +25,7 @@
 					<div class="whitespace-pre-wrap mt-7">{{$post->description}}</div>
 					<div class="mt-5 flex gap-2	 justify-center border-b pb-4 flex-wrap	">
 						{{-- <img src="https://images.unsplash.com/photo-1610147323479-a7fb11ffd5dd?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1534&q=80" class="bg-red-500 rounded-2xl w-1/3 object-cover h-96 flex-auto" alt="photo"> --}}
-						<img src="{{ $post->img_url }}" class="bg-red-500 rounded-2xl w-1/3 object-cover h-96 flex-auto" alt="photo">
+						<img src="{{ $post->img_url }}" class="rounded-2xl w-full object-cover flex-auto" alt="photo">
 					</div>
 						<div class=" h-16 border-b  flex items-center justify-around	">
 							<div class="flex items-center	gap-3	">
@@ -68,9 +68,6 @@
 							</div>
 							<div class="flex items-center	gap-3">
 								
-					<a href="{{ route('posts.index') }}">
-								<div class="text-sm">@lang('Return')</div>
-					</a>
 							</div>
 						</div>
 

@@ -23,7 +23,7 @@
     </head>
     <body>
         
-        {{-- @include('navbar') --}}
+        @include('navbar')
 
         <div class="font-sans text-gray-900 flex flex-row flex-wrap antialiased">
             {{ $slot }}
