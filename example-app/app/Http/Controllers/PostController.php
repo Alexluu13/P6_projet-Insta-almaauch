@@ -17,7 +17,9 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::paginate(6);
+        // $posts = Post::paginate(6);
+        $posts = Post::orderBy('created_at','desc')->paginate(6);
+
         return view ('posts.index', compact('posts'));
     }
 
@@ -27,7 +29,7 @@ class PostController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {   
+    {  
             return view('posts.create');
         
     } 
@@ -46,6 +48,9 @@ class PostController extends Controller
             'img_url' => $request->input('imageUrl')
         ]);
 
+
+
+
         return redirect()->route('my-posts')->with('success','Le post a bien été créé.');
             // back()->with('message','Le post a bien été créé');  
     }
@@ -55,8 +60,8 @@ class PostController extends Controller
      * Display all posts of a specific user
      */
     public function myPosts(){
+        $posts = DB::table('posts')->where('user_id', auth()->id())->orderBy('created_at','desc')->paginate(6);
         // dd($posts);
-        $posts = DB::table('posts')->where('user_id', auth()->id())->get();
         return view('posts.my-posts', compact('posts'));
     }
 

@@ -1,5 +1,5 @@
 <x-guest-layout>
-    <x-app-layout> 
+    {{-- <x-app-layout>  --}}
         <div class="grid gap-4 grid-cols-3 grid-rows-2 mx-8">
             @foreach ($posts as $post)
                 <x-post-card>
@@ -15,7 +15,7 @@
 
                         <div class="mt-5 flex gap-2	 justify-center border-b pb-4 flex-wrap">
                             <a href="{{ route('posts.show', $post->id) }}" class="">
-                            <img class="w-full cursor-pointer" src="{{ $post->img_url }}" class="bg-red-500 rounded-2xl w-1/3 object-cover h-96 flex-auto" alt="photo-user">
+                            <img src="{{ $post->img_url }}" class="object-scale-down h-96 w-96 flex-auto md:h-80" alt="photo-user">
                             </a>
                         </div>
                 
@@ -77,5 +77,5 @@
         </footer>
     </div>
 
-</x-app-layout>
+{{-- </x-app-layout> --}}
 </x-guest-layout>

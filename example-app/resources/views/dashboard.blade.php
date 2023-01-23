@@ -39,7 +39,7 @@
 
                         <div class="mt-5 flex gap-2	 justify-center border-b pb-4 flex-wrap">
                             <a href="{{ route('posts.show', $post->id) }}" class="">
-                            <img class="w-full cursor-pointer" src="{{ $post->img_url }}" class="bg-red-500 rounded-2xl w-1/3 object-cover h-96 flex-auto" alt="photo-user">
+                            <img class="object-scale-down h-96 flex-auto md:h-80 cursor-pointer" src="{{ $post->img_url }}" class="bg-red-500 rounded-2xl w-1/3 object-cover h-96 flex-auto" alt="photo-user">
                             </a>
                         </div>
                 

@@ -1,8 +1,8 @@
-<div class="grid grid-cols-2 relative flex gap-4  h-12 bg-gray-100 dark:bg-gray-900">
+<div class="grid grid-cols-2 relative flex gap-4  h-16 bg-gray-100 dark:bg-gray-900">
 
-    <div class="place-self-start py-2 pl-6">
-        <a href="{{ route('posts.index') }}">
-            <img class="w-8 rounded-full" src="https://media.fds.fi/product_image/800/119RoomCopenhagen_iso_TH.jpg" alt="tête de lego"/>
+    <div class="ml-8 w-fit h-fit self-center">
+        <a href="{{ route('welcome') }}">
+            <img class="w-12 rounded-full" src="https://media.fds.fi/product_image/800/119RoomCopenhagen_iso_TH.jpg" alt="tête de lego"/>
         </a>
     </div>
 

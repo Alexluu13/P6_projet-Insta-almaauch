@@ -29,7 +29,7 @@
                     <div class="whitespace-pre-wrap mt-7">{{$post->description}}</div>
 
                     <div class="mt-5 flex gap-2	 justify-center border-b pb-4 flex-wrap">
-                        <img class="object-cover h-96 flex-auto md:h-80" src="{{ $post->img_url }}" alt="photo-lego">
+                        <img class="object-scale-down h-96 flex-auto md:h-80" src="{{ $post->img_url }}" alt="photo-lego">
                     </div>
                 </div>
                 <div class="footer">
@@ -110,11 +110,11 @@
 
 {{-- ----- Pagination ------   --}}
 
-{{-- <div>
+<div>
 <footer class="card-footer">
     {{$posts->links()}}
 </footer>
-</div> --}}
+</div>
 
 
 </x-app-layout>
