@@ -19,7 +19,7 @@ use App\Models\Post;
 
 Route::get('/', function () {
     return view('welcome');
-})->name('welcome');
+});
 
 Route::get('/index', [PostController::class, 'index'])->name('posts.index');
 
@@ -32,10 +32,9 @@ Route::middleware('auth')->group(function () {
 
 });
 
-Route::resource('posts', PostController::class)->except('index'); 
-
-Route::get('/dashboard', function () {
-    $posts = Post::paginate(6);
+// Route::get('/create', function () {
+    //     return view('create');
+    // })->middleware(['auth', 'verified'])->name('create');
 
     return view('dashboard', compact('posts'));
 })->middleware(['auth', 'verified'])->name('dashboard');

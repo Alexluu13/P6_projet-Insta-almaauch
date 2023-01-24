@@ -8,7 +8,7 @@
     <!-- Message de réussite -->
     @if (session()->has('success'))
     <div class="mt-3 mb-4 list-disc list-inside text-sm text-green-600">
-        {{ session('message') }}
+        {{ session('success') }}
     </div>
     
     @endif
