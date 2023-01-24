@@ -18,7 +18,7 @@ use App\Models\Post;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+return view('welcome');
 })->name('welcome');
 
 Route::get('/index', [PostController::class, 'index'])->name('posts.index');
@@ -35,7 +35,7 @@ Route::middleware('auth')->group(function () {
 Route::resource('posts', PostController::class)->except('index'); 
 
 Route::get('/dashboard', function () {
-    $posts = Post::paginate(6);
+    $posts = Post::orderBy('created_at','desc')->paginate(6);
 
     return view('dashboard', compact('posts'));
 })->middleware(['auth', 'verified'])->name('dashboard');

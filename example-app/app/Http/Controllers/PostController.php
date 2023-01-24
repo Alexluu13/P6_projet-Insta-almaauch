@@ -100,7 +100,7 @@ class PostController extends Controller
         $post->update($request->all());
         //dd($post);
 
-        return redirect()->route('my-posts')->with('success','Le post a bien été créé.');
+        return redirect()->route('my-posts')->with('success','Le post a bien été modifié.');
     }
 
     /**
