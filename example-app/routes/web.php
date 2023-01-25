@@ -18,8 +18,8 @@ use App\Models\Post;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+return view('welcome');
+})->name('welcome');
 
 Route::get('/index', [PostController::class, 'index'])->name('posts.index');
 
@@ -32,9 +32,10 @@ Route::middleware('auth')->group(function () {
 
 });
 
-// Route::get('/create', function () {
-    //     return view('create');
-    // })->middleware(['auth', 'verified'])->name('create');
+Route::resource('posts', PostController::class)->except('index'); 
+
+Route::get('/dashboard', function () {
+    $posts = Post::orderBy('created_at','desc')->paginate(6);
 
     return view('dashboard', compact('posts'));
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -42,9 +43,9 @@ Route::middleware('auth')->group(function () {
 Route::get('/my-posts', [PostController::class, 'myPosts'])->name('my-posts');
 
     
-// Route::get('/posts/create', [PostController::class, 'create']);
+Route::get('/posts/create', [PostController::class, 'create']);
     
-// Route::post('/posts/create', [PostController::class, 'store'])->name('posts.create');
+Route::post('/posts/create', [PostController::class, 'store'])->name('posts.create');
 
 
 

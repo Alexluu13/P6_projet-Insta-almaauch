@@ -15,7 +15,7 @@
         @endif
 
         <!-- Envoi des données à la BD -->
-        <form action="{{ route('posts.store') }}" method="post">
+        <form action="{{ route('posts.create') }}" method="post">
             @csrf
 
             <!-- Description (input) -->
