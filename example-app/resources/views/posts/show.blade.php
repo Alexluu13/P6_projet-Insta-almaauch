@@ -1,4 +1,4 @@
-<x-guest-layout>
+{{-- <x-guest-layout> --}}
 	<x-app-layout>
 
 		<!-- component -->
@@ -77,4 +77,4 @@
 		</div>
 		
 	</x-app-layout>
-</x-guest-layout>
+{{-- </x-guest-layout> --}}

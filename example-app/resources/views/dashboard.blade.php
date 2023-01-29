@@ -38,9 +38,9 @@
                         <div class="whitespace-pre-wrap mt-7">{{$post->description}}</div>
 
                         <div class="mt-5 flex gap-2	 justify-center border-b pb-4 flex-wrap">
-                            {{-- <a href="{{ route('posts.show', $post->id) }}" class=""> --}}
+                            <a href="{{ route('posts.show', $post->id) }}" class="">
                             <img class="object-scale-down h-96 flex-auto md:h-80 cursor-pointer" src="{{ $post->img_url }}" class="bg-red-500 rounded-2xl w-1/3 object-cover h-96 flex-auto" alt="photo-user">
-                            {{-- </a> --}}
+                            </a>
                         </div>
                 
                         <div class="h-16 border-b  flex items-center justify-around">

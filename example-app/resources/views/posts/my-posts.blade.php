@@ -5,13 +5,47 @@
         </h2>
     </x-slot>
 
-    <!-- Message de réussite -->
+    <!-- Message de réussite / open modal -->
     @if (session()->has('success'))
-    <div class="mt-3 mb-4 list-disc list-inside text-sm text-green-600">
-        {{ session('success') }}
-    </div>
-    
+        <div class="modal fade fixed top-0 inset-y-1/2  w-1/4 outline-none overflow-x-hidden overflow-y-auto"
+        id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog relative w-auto pointer-events-none">
+            <div class="modal-content border-none shadow-lg relative flex flex-col w-full pointer-events-auto bg-yellow-50 bg-clip-padding rounded-md outline-none text-current">
+                <div
+                class="modal-header flex flex-shrink-0 items-center justify-between p-4 border-b border-grey-200 rounded-t-md">
+                <h5 class="text-xl font-medium leading-normal text-amber-700" id="exampleModalLabel">
+                    Notification
+                </h5>
+                <button type="button" id="btn-close"
+                    class="btn-close box-content w-4 h-4 p-1 text-black border-none rounded-none opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-black hover:opacity-75 hover:no-underline"
+                    data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body relative p-4 text-amber-800">
+                    {{ session('success') }}
+                </div>
+                <div
+                class="modal-footer flex flex-shrink-0 flex-wrap items-center justify-end p-4 border-t border-gray-200 rounded-b-md">
+                    <button type="button"
+                        class="inline-block px-6 py-2.5 bg-yellow-500 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-yellow-300 hover:shadow-lg focus:bg-yellow-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-yellow-800 active:shadow-lg transition duration-150 ease-in-out" id="closeButton"
+                        data-bs-dismiss="modal">@lang('Close')</button>
+                    {{-- <button type="button"
+                        class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out ml-1">Understood</button> --}}
+                </div>
+            </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            if(document.getElementById("closeButton")){
+                document.getElementById("closeButton").onclick=function(){
+                    document.getElementById("staticBackdrop").classList.toggle("hidden");
+                } 
+            }      
+            </script>
+
     @endif
+
+
 
     
     <div class="grid gap-4 grid-cols-3 mx-8">
@@ -20,7 +54,8 @@
                 <div class="header" >
                     <img src="https://images.unsplash.com/photo-1617077644557-64be144aa306?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" class="object-cover bg-yellow-500 rounded-full w-10 h-10" />
                     <div>
-                        <time datetime="06-08-21" class="text-gray-500 text-xs">{{$post->updated_at}} 
+                        <time datetime="06-08-21" class="text-gray-500 text-xs">
+                            {{ date('D j M, Y', strtotime($post->updated_at)) }}
                         </time>
                     </div>
                     <b class="mb-2 capitalize">{{Auth::user()->name}}</b>
@@ -29,7 +64,9 @@
                     <div class="whitespace-pre-wrap mt-7">{{$post->description}}</div>
 
                     <div class="mt-5 flex gap-2	 justify-center border-b pb-4 flex-wrap">
+                        <a href="{{ route('posts.show', $post->id) }}" class="">
                         <img class="object-scale-down h-96 flex-auto md:h-80" src="{{ $post->img_url }}" alt="photo-lego">
+                        </a>
                     </div>
                 </div>
                 <div class="footer">
@@ -103,8 +140,6 @@
             </x-post-card>
         @endforeach
     </div>
-
-
 
 
 

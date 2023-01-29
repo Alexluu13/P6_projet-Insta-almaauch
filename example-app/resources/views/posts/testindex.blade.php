@@ -312,4 +312,15 @@
   </div>
 
 
-  
+  <!-- example toogle -->
+  <script type="text/javascript">
+    if(document.getElementById("closeButton")){
+        console.log("=== button close === ", document.getElementById("closeButton"));
+        document.getElementById("closeButton").onclick=function(){
+            alert("close");
+        }
+    } else {
+        console.log("==== button n'existe pas ====")
+    }
+   
+    </script>
