@@ -21,11 +21,13 @@ MVC est une architecture logicielle simple consistant à organiser le code en fo
 
 Dans example-app, dans deux terminaux différents. 
 
-sail up 
+sail up (Démarrer le conteneur Docker.)
 
-sail npm run dev
+sail npm run dev (Pour lancer le serveur.)
 
 Démarrer docker.
+
+Control C pour arrêter les serveurs.
 
 ## Pour manipuler la base de donées:
 
