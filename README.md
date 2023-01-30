@@ -1,6 +1,6 @@
 # P6_insta_almaauch
 
-- Ce projet collectif à pour objectif de développer une plateforme de micro-blogging de photos. Projet sur deux semaines. Les utilisatrices pourront créer des posts associant une image avec un texte, et les retrouver regroupés au sein d’une page personnelle. Elles disposeront pour cela d’une page de connexion et d’une page de profil, éditable. 
+Ce projet collectif à pour objectif de développer une plateforme de micro-blogging de photos. Projet sur deux semaines. Les utilisatrices pourront créer des posts associant une image avec un texte, et les retrouver regroupés au sein d’une page personnelle. Elles disposeront pour cela d’une page de connexion et d’une page de profil, éditable. 
 
 MVC est une architecture logicielle simple consistant à organiser le code en fonction de son utilité, en trois catégories :
 - Modèle (*modèle*) pour la gestion des données.
